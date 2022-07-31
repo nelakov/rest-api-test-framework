@@ -5,35 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71df0bdb-2e2d-456c-becb-73cbdb527390" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/listeners/CustomAllureListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/CommonResponseError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/GetUserListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/GetUserResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/GetAllUsersForGenderTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/GetUserTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/TestBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/schemas/schemaV2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/schemas/schemaV3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/tpl/request.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/tpl/response.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/allure-notifications-3.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/telegram_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,29 +88,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Project.color&quot;: &quot;031e33&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nelak/IdeaProjects/interactive_tests/src/test/resources&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Project.color": "031e33",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/nelak/IdeaProjects/interactive_tests",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="tests" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nelak\IdeaProjects\interactive_tests" />
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources" />
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources\tpl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\notifications" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="config" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GetUserTests.getUserWithoutId">
-    <configuration name="GetAllUsersForGenderTests.getAllUsersForGenderPositiveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.interactive_tests [allureServe]">
+    <configuration name="GetAllUsersForGenderTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -148,7 +128,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.GetAllUsersForGenderTests.getAllUsersForGenderPositiveTest&quot;" />
+            <option value="&quot;tests.GetAllUsersForGenderTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -172,29 +152,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;tests.GetUserTests.getAllUserForAnyIdList&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GetUserTests.getAllUserForFemaleIdList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.GetUserTests.getAllUserForFemaleIdList&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -250,6 +207,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="interactive_tests [allureServe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="allureServe" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -277,11 +255,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.interactive_tests [allureServe]" />
+        <item itemvalue="Gradle.GetAllUsersForGenderTests" />
         <item itemvalue="Gradle.GetUserTests.getUserWithoutId" />
         <item itemvalue="Gradle.GetUserTests.getUserWithAnyCharacter" />
         <item itemvalue="Gradle.GetUserTests.getAllUserForAnyIdList" />
-        <item itemvalue="Gradle.GetAllUsersForGenderTests.getAllUsersForGenderPositiveTest" />
-        <item itemvalue="Gradle.GetUserTests.getAllUserForFemaleIdList" />
       </list>
     </recent_temporary>
   </component>
@@ -295,6 +273,7 @@
       <updated>1659024602829</updated>
       <workItem from="1659024604881" duration="14478000" />
       <workItem from="1659269933126" duration="18193000" />
+      <workItem from="1659296989990" duration="1585000" />
     </task>
     <servers />
   </component>
