@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71df0bdb-2e2d-456c-becb-73cbdb527390" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/allure-notifications-3.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notifications/telegram_config.json" afterDir="false" />
+    <list default="true" id="71df0bdb-2e2d-456c-becb-73cbdb527390" name="Changes" comment="add notifications to telegram">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/IDEA-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/JUnit5.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/Jenkins.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/Telegram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/allure-Report-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/git-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/gradle-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/java-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/junit5-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/rest-assured-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo/swagger-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/screens/allure_behaviors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/screens/allure_custom_template_for_response.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/screens/allure_overview.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/allure-notifications-3.1.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/allure-notifications-4.2.1.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +84,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/test/java/listeners/CustomAllureListener.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/java/tests/TestBase.java" root0="FORCE_HIGHLIGHTING" />
@@ -93,7 +110,7 @@
     "Project.color": "031e33",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nelak/IdeaProjects/interactive_tests",
+    "last_opened_file_path": "C:/Users/nelak/IdeaProjects/interactive_tests/images/logo",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
@@ -103,9 +120,11 @@
       <recent name="tests" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\images\logo" />
+      <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\images\screens" />
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests" />
+      <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\notifications" />
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources" />
-      <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources\tpl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\notifications" />
@@ -228,15 +247,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <option name="AUTO_RESTART" value="false" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="SwaggerCodegen">
       <option name="activeConfigurationType" value="FILE" />
       <option name="configurationPath" value="" />
@@ -251,6 +261,14 @@
       <option name="jdkPath" value="" />
       <option name="language" value="java" />
       <option name="specificationPath" value="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources\schemas\schemaV3.json" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="aws.lambda" factoryName="Remote">
+      <option name="credentialProviderId" />
+      <option name="regionId" />
+      <option name="functionName" />
+      <option name="input" />
+      <option name="inputIsFile" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -273,8 +291,17 @@
       <updated>1659024602829</updated>
       <workItem from="1659024604881" duration="14478000" />
       <workItem from="1659269933126" duration="18193000" />
-      <workItem from="1659296989990" duration="1585000" />
+      <workItem from="1659296989990" duration="3492000" />
+      <workItem from="1659300560919" duration="833000" />
     </task>
+    <task id="LOCAL-00001" summary="add notifications to telegram">
+      <created>1659298780545</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659298780545</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,5 +317,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add notifications to telegram" />
+    <option name="LAST_COMMIT_MESSAGE" value="add notifications to telegram" />
   </component>
 </project>
