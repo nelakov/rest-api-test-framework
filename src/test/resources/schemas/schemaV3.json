@@ -1,0 +1,183 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sample REST API",
+    "description": "for test purposes only",
+    "termsOfService": "https://interactivestandard.com",
+    "contact": {
+      "name": "Interactive Standard Team",
+      "email": "team@interactivestandard.com"
+    },
+    "license": {
+      "name": "All rights reserved"
+    },
+    "version": "1.2.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/api/test/users": {
+      "get": {
+        "tags": [
+          "qa-test-controller"
+        ],
+        "operationId": "users",
+        "parameters": [
+          {
+            "name": "gender",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserIdListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/test/user/{id}": {
+      "get": {
+        "tags": [
+          "qa-test-controller"
+        ],
+        "operationId": "user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UserIdListResponse": {
+        "required": [
+          "errorCode",
+          "isSuccess"
+        ],
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "idList": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "success": {
+            "type": "boolean",
+            "writeOnly": true
+          }
+        }
+      },
+      "User": {
+        "required": [
+          "age",
+          "city",
+          "gender",
+          "id",
+          "name",
+          "registrationDate"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female",
+              "magic",
+              "McCloud"
+            ]
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "city": {
+            "type": "string"
+          },
+          "registrationDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "UserResponse": {
+        "required": [
+          "errorCode",
+          "isSuccess"
+        ],
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "success": {
+            "type": "boolean",
+            "writeOnly": true
+          }
+        }
+      }
+    }
+  }
+}
