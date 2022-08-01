@@ -31,6 +31,7 @@ After tests are executed run the following command at Terminal
 gradle allureServe
 ```
 or run report using GUI
+![image](images/screens/allureServe.png)
 
 ### Allure Report Results
 [REPORT](https://jenkins.autotests.cloud/job/interactive-api-tests/4/allure/)

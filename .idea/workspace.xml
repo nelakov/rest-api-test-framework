@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71df0bdb-2e2d-456c-becb-73cbdb527390" name="Changes" comment="add notifications to telegram">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/IDEA-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/JUnit5.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/Jenkins.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/Telegram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/allure-Report-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/git-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/gradle-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/java-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/junit5-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/rest-assured-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo/swagger-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/screens/allure_behaviors.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/screens/allure_custom_template_for_response.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/screens/allure_overview.png" afterDir="false" />
+    <list default="true" id="71df0bdb-2e2d-456c-becb-73cbdb527390" name="Changes" comment="add README.md and screens">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications/allure-notifications-3.1.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/allure-notifications-4.2.1.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,9 +91,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Project.color": "031e33",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nelak/IdeaProjects/interactive_tests/images/logo",
+    "last_opened_file_path": "C:/Users/nelak/IdeaProjects/interactive_tests/images/screens",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
@@ -120,8 +105,8 @@
       <recent name="tests" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\images\logo" />
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\images\screens" />
+      <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\images\logo" />
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests" />
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\notifications" />
       <recent name="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources" />
@@ -263,14 +248,6 @@
       <option name="specificationPath" value="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources\schemas\schemaV3.json" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="aws.lambda" factoryName="Remote">
-      <option name="credentialProviderId" />
-      <option name="regionId" />
-      <option name="functionName" />
-      <option name="input" />
-      <option name="inputIsFile" value="false" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.interactive_tests [allureServe]" />
@@ -292,7 +269,8 @@
       <workItem from="1659024604881" duration="14478000" />
       <workItem from="1659269933126" duration="18193000" />
       <workItem from="1659296989990" duration="3492000" />
-      <workItem from="1659300560919" duration="833000" />
+      <workItem from="1659300560919" duration="1508000" />
+      <workItem from="1659340394157" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="add notifications to telegram">
       <created>1659298780545</created>
@@ -301,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659298780545</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add README.md and screens">
+      <created>1659301600282</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659301600282</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +305,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add notifications to telegram" />
-    <option name="LAST_COMMIT_MESSAGE" value="add notifications to telegram" />
+    <MESSAGE value="add README.md and screens" />
+    <option name="LAST_COMMIT_MESSAGE" value="add README.md and screens" />
   </component>
 </project>
