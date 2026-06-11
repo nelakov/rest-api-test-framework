@@ -10,11 +10,14 @@ import listeners.CustomAllureListener;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
 
+import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class TestBase {
 
     private static final String BASE_URI = "https://hr-challenge.interactivestandard.com";
+    private static final String USER_SCHEMA = "schemas/schemaV3.json";
 
     static RequestSpecification reqSpecForGetUser = null;
     static RequestSpecification reqSpecForGetUserList = null;
@@ -52,5 +55,48 @@ public class TestBase {
                 .expectResponseTime(Matchers.lessThan(5000L))
                 .build();
 
+    }
+
+    protected static <T> T getUserById(ResponseSpecification respSpec, Class<T> type, Object id) {
+        return given()
+                .spec(reqSpecForGetUser)
+                .log().all()
+                .when()
+                .get("{id}", id)
+                .then()
+                .log().all()
+                .spec(respSpec)
+                .body(matchesJsonSchemaInClasspath(USER_SCHEMA))
+                .extract().as(type);
+    }
+
+    protected static <T> T getUser(ResponseSpecification respSpec, Class<T> type) {
+        return given()
+                .spec(reqSpecForGetUser)
+                .log().all()
+                .when()
+                .get()
+                .then()
+                .log().all()
+                .spec(respSpec)
+                .body(matchesJsonSchemaInClasspath(USER_SCHEMA))
+                .extract().as(type);
+    }
+
+    protected static <T> T getUsersByGender(ResponseSpecification respSpec, Class<T> type, String gender) {
+        RequestSpecification request = given()
+                .spec(reqSpecForGetUserList)
+                .log().all();
+        if (gender != null) {
+            request = request.param("gender", gender);
+        }
+        return request
+                .when()
+                .get()
+                .then()
+                .log().all()
+                .spec(respSpec)
+                .body(matchesJsonSchemaInClasspath(USER_SCHEMA))
+                .extract().as(type);
     }
 }
