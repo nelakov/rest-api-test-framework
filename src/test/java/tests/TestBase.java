@@ -10,37 +10,35 @@ import listeners.CustomAllureListener;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
 
-import java.util.Properties;
-
+import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class TestBase {
 
-    static Properties prop = new Properties();
+    private static final String BASE_URI = "https://hr-challenge.interactivestandard.com";
+    private static final String USER_SCHEMA = "schemas/schemaV3.json";
+
     static RequestSpecification reqSpecForGetUser = null;
     static RequestSpecification reqSpecForGetUserList = null;
     static ResponseSpecification respSpecForGetUser = null;
     static ResponseSpecification respSpecForUserListPositive = null;
     static ResponseSpecification respSpecCommonForError = null;
 
+    private static RequestSpecification reqSpec(String basePath) {
+        return new RequestSpecBuilder()
+                .setBaseUri(BASE_URI)
+                .setBasePath(basePath)
+                .setContentType(JSON)
+                .addFilter(CustomAllureListener.withCustomTemplates())
+                .build();
+    }
 
     @BeforeAll
     static void beforeAll() {
 
-        reqSpecForGetUser = new RequestSpecBuilder()
-                .setBaseUri("https://hr-challenge.interactivestandard.com")
-                .setBasePath("api/test/user")
-                .setContentType(JSON)
-                .addFilter(CustomAllureListener.withCustomTemplates())
-                .build();
-
-        reqSpecForGetUserList = new RequestSpecBuilder()
-                .setBaseUri("https://hr-challenge.interactivestandard.com")
-                .setBasePath("api/test/users")
-                .setContentType(JSON)
-                .addFilter(CustomAllureListener.withCustomTemplates())
-                .build();
-
+        reqSpecForGetUser = reqSpec("api/test/user");
+        reqSpecForGetUserList = reqSpec("api/test/users");
 
         respSpecForGetUser = new ResponseSpecBuilder()
                 .expectStatusCode(200)
@@ -48,13 +46,7 @@ public class TestBase {
                 .expectContentType(ContentType.JSON)
                 .expectResponseTime(Matchers.lessThan(5000L))
                 .build();
-
-        respSpecForUserListPositive = new ResponseSpecBuilder()
-                .expectStatusCode(200)
-                .expectStatusLine("HTTP/1.1 200 OK")
-                .expectContentType(ContentType.JSON)
-                .expectResponseTime(Matchers.lessThan(5000L))
-                .build();
+        respSpecForUserListPositive = respSpecForGetUser;
 
         respSpecCommonForError = new ResponseSpecBuilder()
                 .expectStatusCode(400)
@@ -63,6 +55,48 @@ public class TestBase {
                 .expectResponseTime(Matchers.lessThan(5000L))
                 .build();
 
+    }
 
+    protected static <T> T getUserById(ResponseSpecification respSpec, Class<T> type, Object id) {
+        return given()
+                .spec(reqSpecForGetUser)
+                .log().all()
+                .when()
+                .get("{id}", id)
+                .then()
+                .log().all()
+                .spec(respSpec)
+                .body(matchesJsonSchemaInClasspath(USER_SCHEMA))
+                .extract().as(type);
+    }
+
+    protected static <T> T getUser(ResponseSpecification respSpec, Class<T> type) {
+        return given()
+                .spec(reqSpecForGetUser)
+                .log().all()
+                .when()
+                .get()
+                .then()
+                .log().all()
+                .spec(respSpec)
+                .body(matchesJsonSchemaInClasspath(USER_SCHEMA))
+                .extract().as(type);
+    }
+
+    protected static <T> T getUsersByGender(ResponseSpecification respSpec, Class<T> type, String gender) {
+        RequestSpecification request = given()
+                .spec(reqSpecForGetUserList)
+                .log().all();
+        if (gender != null) {
+            request = request.param("gender", gender);
+        }
+        return request
+                .when()
+                .get()
+                .then()
+                .log().all()
+                .spec(respSpec)
+                .body(matchesJsonSchemaInClasspath(USER_SCHEMA))
+                .extract().as(type);
     }
 }
