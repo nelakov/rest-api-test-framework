@@ -2,7 +2,6 @@ package tests;
 
 import io.qameta.allure.Story;
 import models.CommonResponseError;
-import models.GetUserListResponse;
 import models.GetUserResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

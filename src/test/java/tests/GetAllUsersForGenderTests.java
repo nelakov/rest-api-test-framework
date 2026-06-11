@@ -32,7 +32,7 @@ public class GetAllUsersForGenderTests extends TestBase {
                 .extract().as(GetUserListResponse.class);
 
         assertThat(allUsers.getErrorCode()).isEqualTo(0);
-        assertThat(allUsers.getIsSuccess()).isEqualTo(true);
+        assertThat(allUsers.getIsSuccess()).isTrue();
         assertThat(allUsers.getIdList()).isNotEmpty();
     }
 

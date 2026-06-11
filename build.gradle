@@ -1,80 +1,57 @@
 plugins {
     id 'java-library'
-    id 'io.qameta.allure' version '2.9.6'
-    id "io.freefair.lombok" version "6.4.2"
+    id 'io.qameta.allure' version '4.1.0'
 }
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation(
-            'org.projectlombok:lombok:1.18.16'
-    )
-}
-
-def allureVersion = "2.17.3",
-    junitVersion = "5.8.2",
-    restAssuredVersion = "5.0.1",
-    lombokVersion = "1.18.24"
+def allureVersion = "2.35.2"
 
 allure {
-    report {
-        version.set(allureVersion)
-    }
+    version.set(allureVersion)
     adapter {
-        autoconfigure.set(true)
+        allureJavaVersion.set(allureVersion)
         aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                adapterVersion.set(allureVersion)
+                enabled.set(true)
             }
         }
     }
 }
 
-
 dependencies {
-
-    compileOnly 'org.projectlombok:lombok:$lombokVersion'
-    annotationProcessor 'org.projectlombok:lombok:$lombokVersion'
-    testCompileOnly 'org.projectlombok:lombok:$lombokVersion'
-    testAnnotationProcessor 'org.projectlombok:lombok:$lombokVersion'
-
-    implementation(
-            'com.fasterxml.jackson.core:jackson-core:2.13.2',
-            'com.fasterxml.jackson.core:jackson-annotations:2.13.2',
-            'com.fasterxml.jackson.core:jackson-databind:2.13.2.2'
-
-    )
+    testImplementation(platform('org.junit:junit-bom:6.1.0'))
+    testImplementation(platform('com.fasterxml.jackson:jackson-bom:2.22.0'))
 
     testImplementation(
-            "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "io.rest-assured:rest-assured:$restAssuredVersion",
-            "io.rest-assured:json-schema-validator:$restAssuredVersion",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
-            "org.junit.jupiter:junit-jupiter-params:$junitVersion",
-            "org.assertj:assertj-core:3.22.0",
-            "org.aeonbits.owner:owner:1.0.12",
-            "org.aspectj:aspectjweaver:1.9.6",
-            "org.slf4j:slf4j-simple:1.7.36",
-            "commons-io:commons-io:2.6",
+            'com.fasterxml.jackson.core:jackson-databind',
+            "io.qameta.allure:allure-rest-assured:${allureVersion}",
+            'io.rest-assured:rest-assured:6.0.0',
+            'io.rest-assured:json-schema-validator:6.0.0',
+            'org.junit.jupiter:junit-jupiter',
+            'org.assertj:assertj-core:3.27.7',
     )
 
     testRuntimeOnly(
-            "org.slf4j:slf4j-simple:1.7.29",
-            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+            'org.slf4j:slf4j-simple:2.0.18',
+            'org.junit.platform:junit-platform-launcher',
+    )
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
@@ -89,10 +66,7 @@ tasks.withType(Test) {
     }
 
     testLogging {
-        lifecycle {
-//            events "started", "failed"
-            events "started", "skipped", "failed", "standard_error", "standard_out"
-            exceptionFormat "short"
-        }
+        events "started", "skipped", "failed", "standard_error", "standard_out"
+        exceptionFormat "short"
     }
 }

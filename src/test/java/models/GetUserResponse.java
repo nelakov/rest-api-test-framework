@@ -72,7 +72,7 @@ public class GetUserResponse {
             "registrationDate"
     })
 
-    public class User {
+    public static class User {
         @JsonProperty("id")
         private Integer id;
         @JsonProperty("name")
