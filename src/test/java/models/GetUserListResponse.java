@@ -16,7 +16,7 @@ public class GetUserListResponse {
     @JsonProperty("errorMessage")
     private Object errorMessage;
     @JsonProperty("idList")
-    private List<Integer> idList = null;
+    private List<Integer> idList;
 
     @JsonProperty("isSuccess")
     public Boolean getIsSuccess() {
