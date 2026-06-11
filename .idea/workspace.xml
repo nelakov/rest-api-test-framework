@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71df0bdb-2e2d-456c-becb-73cbdb527390" name="Changes" comment="add README.md and screens">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/abuFix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +82,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2CZyrQFpQw8rHb52jI7mdK1MZ0y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -95,9 +100,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nelak/IdeaProjects/interactive_tests/images/screens",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/nelak/Repositories/IdeaProjects/interactive_tests",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2825",
+    "settings.editor.selected.configurable": "terminal",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -118,7 +128,7 @@
       <recent name="config" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.interactive_tests [allureServe]">
+  <component name="RunManager" selected="Gradle.interactive_tests [allureReport]">
     <configuration name="GetAllUsersForGenderTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -140,9 +150,10 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GetUserTests.getAllUserForAnyIdList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GetUserTests.getUserForFemaleIdList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -155,7 +166,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.GetUserTests.getAllUserForAnyIdList&quot;" />
+            <option value="&quot;tests.GetUserTests.getUserForFemaleIdList&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -163,29 +174,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GetUserTests.getUserWithAnyCharacter" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.GetUserTests.getUserWithAnyCharacter&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="GetUserTests.getUserWithoutId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -209,6 +198,29 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="interactive_tests [allureReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="allureReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="interactive_tests [allureServe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -230,31 +242,39 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="SwaggerCodegen">
-      <option name="activeConfigurationType" value="FILE" />
-      <option name="configurationPath" value="" />
-      <option name="customJreEnabled" value="false" />
+    <configuration default="true" type="SwaggerCodegen" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allowRunningInParallel" value="false" />
       <option name="customTemplatesPath" value="" />
-      <option name="enableDebugLogging" value="false" />
+      <option name="envs">
+        <map />
+      </option>
       <option name="generateToPath" value="C:\Users\nelak\IdeaProjects\interactive_tests\gen" />
       <option name="generationParameters">
         <list />
       </option>
-      <option name="generatorPath" value="https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar" />
+      <option name="generatorType" value="OPENAPI_GENERATOR_V6" />
       <option name="jdkPath" value="" />
       <option name="language" value="java" />
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
       <option name="specificationPath" value="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources\schemas\schemaV3.json" />
+      <option name="workingDirectory" value="C:\Users\nelak\IdeaProjects\interactive_tests\src\test\resources\schemas" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.interactive_tests [allureServe]" />
+        <item itemvalue="Gradle.interactive_tests [allureReport]" />
         <item itemvalue="Gradle.GetAllUsersForGenderTests" />
+        <item itemvalue="Gradle.interactive_tests [allureServe]" />
+        <item itemvalue="Gradle.GetUserTests.getUserForFemaleIdList" />
         <item itemvalue="Gradle.GetUserTests.getUserWithoutId" />
-        <item itemvalue="Gradle.GetUserTests.getUserWithAnyCharacter" />
-        <item itemvalue="Gradle.GetUserTests.getAllUserForAnyIdList" />
       </list>
     </recent_temporary>
   </component>
@@ -270,7 +290,19 @@
       <workItem from="1659269933126" duration="18193000" />
       <workItem from="1659296989990" duration="3492000" />
       <workItem from="1659300560919" duration="1508000" />
-      <workItem from="1659340394157" duration="301000" />
+      <workItem from="1659340394157" duration="991000" />
+      <workItem from="1666251800402" duration="623000" />
+      <workItem from="1666370287462" duration="4000" />
+      <workItem from="1666726572232" duration="273000" />
+      <workItem from="1666726856260" duration="703000" />
+      <workItem from="1666880180680" duration="879000" />
+      <workItem from="1666881368388" duration="198000" />
+      <workItem from="1666883853120" duration="806000" />
+      <workItem from="1667588785892" duration="1538000" />
+      <workItem from="1667630516343" duration="3697000" />
+      <workItem from="1667653574242" duration="153000" />
+      <workItem from="1684142009085" duration="27000" />
+      <workItem from="1701008958940" duration="360000" />
     </task>
     <task id="LOCAL-00001" summary="add notifications to telegram">
       <created>1659298780545</created>
@@ -286,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659301600282</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add README.md and screens">
+      <created>1659340776062</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1659340776062</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
