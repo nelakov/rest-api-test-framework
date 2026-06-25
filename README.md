@@ -1,4 +1,4 @@
-<h1 align="center">Interactive API Test Framework</h1>
+<h1 align="center">REST API Test Framework</h1>
 
 <p align="center">
   A production-style REST API automation suite — <b>contract-validated</b>, <b>data-driven</b>,
@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Java-25_LTS-orange?logo=openjdk&logoColor=white">
-  <img src="https://img.shields.io/badge/Gradle-9.5.1-02303A?logo=gradle&logoColor=white">
+  <img src="https://img.shields.io/badge/Gradle-9.6.0-02303A?logo=gradle&logoColor=white">
   <img src="https://img.shields.io/badge/JUnit-6.1-25A162?logo=junit5&logoColor=white">
   <img src="https://img.shields.io/badge/REST--Assured-6.0-43853D">
   <img src="https://img.shields.io/badge/Allure-2.35-FF5722">
@@ -57,7 +57,7 @@ flowchart LR
 | Layer | Tool | Why it's here |
 |---|---|---|
 | Language | **Java 25 (LTS)** | Current LTS; modern language baseline |
-| Build | **Gradle 9.5.1** + wrapper + foojay | Reproducible builds; auto-provisions the JDK |
+| Build | **Gradle 9.6.0** + wrapper + foojay | Reproducible builds; auto-provisions the JDK |
 | Test engine | **JUnit 6** | Parametrized, data-driven, parallel execution |
 | HTTP & validation | **REST-Assured 6** | Fluent request building + JSON Schema validation |
 | Assertions | **AssertJ 3.27** | Readable, chainable assertions |
@@ -103,7 +103,7 @@ business fields with AssertJ.
 ./gradlew clean test -Dthreads=4
 ```
 
-> No local Gradle needed — the wrapper pins **9.5.1**. The **foojay** resolver
+> No local Gradle needed — the wrapper pins **9.6.0**. The **foojay** resolver
 > provisions **JDK 25** if it isn't already installed.
 
 ## Reporting
