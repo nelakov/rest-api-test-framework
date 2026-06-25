@@ -2,4 +2,4 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
-rootProject.name = 'interactive_tests'
+rootProject.name = 'rest-api-test-framework'
