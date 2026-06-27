@@ -1,8 +1,7 @@
 <h1 align="center">REST API Test Framework</h1>
 
 <p align="center">
-  A production-style REST API automation suite — <b>contract-validated</b>, <b>data-driven</b>,
-  and <b>fully reported</b>. Engineered on a current JVM stack.
+  API tests for the HR-Challenge REST API. Responses are validated against a JSON Schema, the cases are data-driven, and runs are reported with Allure.
 </p>
 
 <p align="center">
@@ -28,16 +27,16 @@
 
 ---
 
-## Highlights
+## What it does
 
-- **Contract-first validation** — every response is checked against a **JSON Schema**, so structural drift fails the test before a single field assertion runs.
-- **Data-driven by design** — parametrized tests fan out positive *and* negative scenarios from compact `@ValueSource` sets: valid IDs, missing IDs, non-existent IDs, special characters, invalid/blank gender.
-- **Build specs once, reuse everywhere** — request/response `Specification`s are assembled a single time in `@BeforeAll`; tests stay declarative.
-- **One call, zero duplication** — the `given/when/then` pipeline lives in reusable generic `TestBase` helpers (`getUserById`, `getUser`, `getUsersByGender`), so each test is ~4 lines of intent.
-- **Reports that read themselves** — custom Allure Freemarker templates render each exchange as a request/response card with a copy-ready **cURL**.
-- **Parallel-ready** — runs on the JUnit Platform with configurable fixed parallelism.
-- **Self-provisioning build** — the Gradle wrapper + **foojay** toolchain resolver fetch the right JDK automatically; clone and run.
-- **Results in your pocket** — Allure summaries delivered to **Telegram**.
+- Every response is validated against a JSON Schema (`schemas/schemaV3.json`) before any field assertion runs, so structural drift fails the test early.
+- Parametrized tests cover positive and negative cases from `@ValueSource` sets: valid IDs, missing IDs, non-existent IDs, special characters, invalid and blank gender.
+- Request/response `Specification`s are built once in `@BeforeAll`, so the tests stay short.
+- The `given/when/then` calls live in reusable `TestBase` helpers (`getUserById`, `getUser`, `getUsersByGender`), so each test is about four lines.
+- Custom Allure Freemarker templates render each exchange as a request/response card with a copy-ready cURL.
+- Runs on the JUnit Platform with configurable parallelism.
+- The Gradle wrapper plus the foojay toolchain resolver fetch the right JDK automatically.
+- Allure summaries are posted to Telegram.
 
 ## Architecture
 
@@ -52,35 +51,35 @@ flowchart LR
     G --> H["Telegram"]
 ```
 
-## Tech Stack
+## Tech stack
 
-| Layer | Tool | Why it's here |
-|---|---|---|
-| Language | **Java 25 (LTS)** | Current LTS; modern language baseline |
-| Build | **Gradle 9.6.0** + wrapper + foojay | Reproducible builds; auto-provisions the JDK |
-| Test engine | **JUnit 6** | Parametrized, data-driven, parallel execution |
-| HTTP & validation | **REST-Assured 6** | Fluent request building + JSON Schema validation |
-| Assertions | **AssertJ 3.27** | Readable, chainable assertions |
-| Reporting | **Allure 2.35** | Step-level reports, behaviors, custom templates |
-| Mapping | **Jackson** | Response → typed DTOs |
-| Notifications | **Telegram** | Report delivery to chat |
-| CI | **Jenkins** | Triggered / scheduled runs |
+| Layer | Tool |
+|---|---|
+| Language | Java 25 (LTS) |
+| Build | Gradle 9.6.0 (wrapper) + foojay |
+| Test engine | JUnit 6 |
+| HTTP & validation | REST-Assured 6 (JSON Schema validation) |
+| Assertions | AssertJ 3.27 |
+| Reporting | Allure 2.35 |
+| Mapping | Jackson (response to DTOs) |
+| Notifications | Telegram |
+| CI | Jenkins |
 
-## Project Structure
+## Project structure
 
 ```
 src/test/
 ├── java/
 │   ├── tests/        # TestBase (shared specs + request helpers) + GetUser / GetAllUsers suites
 │   ├── models/       # response DTOs: GetUserResponse, GetUserListResponse, CommonResponseError
-│   └── listeners/    # CustomAllureListener — request/response Allure templates
+│   └── listeners/    # CustomAllureListener: request/response Allure templates
 └── resources/
-    ├── schemas/      # JSON Schema (schemaV3.json) — the response contract
+    ├── schemas/      # JSON Schema (schemaV3.json): the response contract
     └── tpl/          # Freemarker templates powering the Allure cards
-notifications/        # Allure → Telegram delivery (jar + config)
+notifications/        # Allure to Telegram delivery (jar + config)
 ```
 
-## Test Design
+## Test design
 
 | Endpoint | Positive | Negative |
 |---|---|---|
@@ -90,7 +89,7 @@ notifications/        # Allure → Telegram delivery (jar + config)
 Every case validates the body against `schemas/schemaV3.json` and asserts the
 business fields with AssertJ.
 
-## Getting Started
+## Getting started
 
 ```bash
 # Run the whole suite (Gradle is pinned by the wrapper; the JDK is auto-provisioned)
@@ -103,7 +102,7 @@ business fields with AssertJ.
 ./gradlew clean test -Dthreads=4
 ```
 
-> No local Gradle needed — the wrapper pins **9.6.0**. The **foojay** resolver
+> No local Gradle needed; the wrapper pins **9.6.0**, and the **foojay** resolver
 > provisions **JDK 25** if it isn't already installed.
 
 ## Reporting
@@ -125,7 +124,7 @@ Or launch from the IDE:
 
 ![Custom template](images/screens/allure_custom_template_for_response.png)
 
-## Telegram Notifications
+## Telegram notifications
 
 Deliver the Allure summary to a chat via
 [allure-notifications](https://github.com/qa-guru/allure-notifications):
